@@ -1,3 +1,11 @@
+
+Bin/
+Lib/
+.vs/
+DummyApp/.vs/
+FinanceCore/.vs/
+SQuant/.vs/
+
 # Prerequisites
 *.d
 
