@@ -4,10 +4,49 @@
     <Filter Include="Main">
       <UniqueIdentifier>{0e1fd6f3-739d-4b53-8646-3ab64ea4dd92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{2946def3-9651-4026-87bf-46ad26840525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time\Calendars">
+      <UniqueIdentifier>{89c33e0b-78d8-45b2-a4b5-0b5fc82de310}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Date.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="CorePch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Weekday.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreMacro.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Calendar.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\calendars\TARGET.h">
+      <Filter>Time\Calendars</Filter>
+    </ClInclude>
+    <ClInclude Include="time\TimeUnit.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\BusinessDayConvention.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Period.h">
+      <Filter>Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -16,6 +55,30 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Date.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Weekday.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Calendar.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\calendars\TARGET.cpp">
+      <Filter>Time\Calendars</Filter>
+    </ClCompile>
+    <ClCompile Include="time\TimeUnit.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\BusinessDayConvention.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Period.cpp">
+      <Filter>Time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
