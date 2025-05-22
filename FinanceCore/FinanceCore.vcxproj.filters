@@ -12,6 +12,14 @@
     </Filter>
     <Filter Include="Instrument">
       <UniqueIdentifier>{1f2eb654-9af9-44e7-bd4a-6b504b36a691}</UniqueIdentifier>
+    <Filter Include="Quote">
+      <UniqueIdentifier>{dcbe8a25-9184-4ea9-bc77-c888e0b53600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{551e1761-6656-4e5e-9865-0270f455734f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{a2e0542c-82e0-4ce3-ae31-359d2d1b9c76}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +73,27 @@
     </ClInclude>
     <ClInclude Include="CoreGlobal.h" />
     <ClInclude Include="Memory.h" />
+    <ClInclude Include="quote\SimpleQuote.h">
+      <Filter>Quote</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\Observable.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="quote\Quote.h">
+      <Filter>Quote</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\Null.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\Singleton.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Frequency.h">
+      <Filter>Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FinanceCore.cpp">
@@ -108,5 +137,24 @@
     </ClCompile>
     <ClCompile Include="CoreGlobal.cpp" />
     <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="quote\SimpleQuote.cpp">
+      <Filter>Quote</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern\Observable.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="quote\Quote.cpp">
+      <Filter>Quote</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\Null.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern\Singleton.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Frequency.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+>>>>>>> 08ac318 (bond example process2)
   </ItemGroup>
 </Project>

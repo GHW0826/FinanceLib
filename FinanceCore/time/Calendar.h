@@ -36,14 +36,18 @@ public:
     bool IsHoliday(const Date& d) const;
     bool IsBusinessDay(const Date& d) const;
 public:
-    // ¿µ¾÷ÀÏÀÌ ¾Æ´Ñ ³¯Â¥(ÈÞÀÏ ¶Ç´Â ÁÖ¸» µî)¸¦ ÁöÁ¤ÇÑ ±ÔÄ¢(BusinessDayConvention)¿¡ µû¶ó 
-    // °¡±î¿î À¯È¿ÇÑ ¿µ¾÷ÀÏ·Î º¸Á¤ÇØÁÖ´Â ÇÔ¼ö.
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½Â¥(ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¢(BusinessDayConvention)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½.
     Date Adjust(const Date& date, BusinessDayConvention convention = kFollowing) const;
 
-    // ÁÖ¾îÁø ³¯Â¥·ÎºÎÅÍ ÁöÁ¤ÇÑ ¼öÀÇ ¿µ¾÷ÀÏ¸¸Å­ ÀüÁøÇÑ ³¯Â¥¸¦ ¹ÝÈ¯ÇÕ´Ï´Ù.
-    // ¿ø·¡ ÀÔ·ÂÇÑ ³¯Â¥´Â º¯°æµÇÁö ¾Ê½À´Ï´Ù.
-    Date Advance(const Date& date, Integer n, TimeUnit unit, BusinessDayConvention convention = kFollowing, bool endOfMonth = false) const;
+    // ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½Å­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.
     Date Advance(const Date& date, const Period& period, BusinessDayConvention convention = kFollowing, bool endOfMonth = false) const;
+    Date Advance(const Date& date, Integer n, TimeUnit unit, BusinessDayConvention convention = kFollowing, bool endOfMonth = false) const;
+    bool IsBusinessDay(const Date& d) const;
+    bool IsHoliday(const Date& d) const;
+    bool IsEndOfMonth(const Date& d) const;
+    Date EndOfMonth(const Date& d) const;
 protected:
     SharedPtr<Impl> _impl;
 };

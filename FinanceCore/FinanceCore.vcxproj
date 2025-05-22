@@ -95,7 +95,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(SolutionDir)\FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> 08ac318 (bond example process2)
     </ClCompile>
     <Link>
       <SubSystem>
@@ -152,7 +156,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(SolutionDir)\FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> 08ac318 (bond example process2)
     </ClCompile>
     <Link>
       <SubSystem>
@@ -172,15 +180,22 @@
     <ClInclude Include="Instrument\Bond.h" />
     <ClInclude Include="Instrument\Instrument.h" />
     <ClInclude Include="Memory.h" />
+    <ClInclude Include="handle.h" />
+    <ClInclude Include="pattern\Observable.h" />
+    <ClInclude Include="pattern\Singleton.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="quote\Quote.h" />
+    <ClInclude Include="quote\SimpleQuote.h" />
     <ClInclude Include="time\BusinessDayConvention.h" />
     <ClInclude Include="time\Calendar.h" />
     <ClInclude Include="time\calendars\TARGET.h" />
     <ClInclude Include="time\Date.h" />
+    <ClInclude Include="time\Frequency.h" />
     <ClInclude Include="time\Period.h" />
     <ClInclude Include="time\TimeUnit.h" />
     <ClInclude Include="time\Weekday.h" />
     <ClInclude Include="Types.h" />
+    <ClInclude Include="utility\Null.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Allocator.cpp" />
@@ -190,19 +205,25 @@
     <ClCompile Include="Instrument\Bond.cpp" />
     <ClCompile Include="Instrument\Instrument.cpp" />
     <ClCompile Include="Memory.cpp" />
+    <ClCompile Include="pattern\Observable.cpp" />
+    <ClCompile Include="pattern\Singleton.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="quote\Quote.cpp" />
+    <ClCompile Include="quote\SimpleQuote.cpp" />
     <ClCompile Include="time\BusinessDayConvention.cpp" />
     <ClCompile Include="time\Calendar.cpp" />
     <ClCompile Include="time\calendars\TARGET.cpp" />
     <ClCompile Include="time\Date.cpp" />
+    <ClCompile Include="time\Frequency.cpp" />
     <ClCompile Include="time\Period.cpp" />
     <ClCompile Include="time\TimeUnit.cpp" />
     <ClCompile Include="time\Weekday.cpp" />
+    <ClCompile Include="utility\Null.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

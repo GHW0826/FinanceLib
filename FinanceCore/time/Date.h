@@ -57,15 +57,19 @@ public:
 public:
     Date Advance(const Date& date, Integer n, TimeUnit units) const;
     static bool IsLeap(Year y);
-    // ÇöÀç °ü¸®ÇÏ´Â ÃÖ¼Ò ³¯Â¥ ¹ÝÈ¯ (1901/01/01)
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½È¯ (1901/01/01)
     static Date MinDate();
-    // ÇöÀç °ü¸®ÇÏ´Â ÃÖ´ë ³¯Â¥ ¹ÝÈ¯ (2199/12/31)
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½È¯ (2199/12/31)
     static Date MaxDate();
     static Date StartOfMonth(const Date& d);
     static bool IsStartOfMonth(const Date& d);
     static Date EndOfMonth(const Date& d);
     static bool IsEndOfMonth(const Date& d);
     static Date NextWeekday(const Date& d, Weekday w);
+    //! last day of the month to which the given date belongs
+    static Date EndOfMonth(const Date& d);
+    //! whether a date is the last day of its month
+    static bool IsEndOfMonth(const Date& d);
 private:
     static void CheckSerialNumber(Date::serial_type serialNumber);
     static Date::serial_type MinimumSerialNumber();

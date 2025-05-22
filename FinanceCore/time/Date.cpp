@@ -256,6 +256,7 @@ Date Date::MaxDate() {
     return maximumDate;
 }
 
+<<<<<<< HEAD
 Date Date::StartOfMonth(const Date& d)
 {
     return Date();
@@ -269,16 +270,27 @@ bool Date::IsStartOfMonth(const Date& d)
 Date Date::EndOfMonth(const Date& d)
 {
     return Date();
+=======
+Date Date::EndOfMonth(const Date& d)
+{
+    Month m = d.GetMonth();
+    Year y = d.GetYear();
+    return { MonthLength(m, IsLeap(y)), m, y };
+>>>>>>> 08ac318 (bond example process2)
 }
 
 bool Date::IsEndOfMonth(const Date& d)
 {
+<<<<<<< HEAD
     return false;
 }
 
 Date Date::NextWeekday(const Date& d, Weekday w)
 {
     return Date();
+=======
+    return (d.DayOfMonth() == MonthLength(d.GetMonth(), IsLeap(d.GetYear())));
+>>>>>>> 08ac318 (bond example process2)
 }
 
 void Date::CheckSerialNumber(Date::serial_type serialNumber) {

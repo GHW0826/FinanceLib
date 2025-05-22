@@ -99,23 +99,29 @@ Date Calendar::EndOfMonth(const Date& d) const
     return Adjust(Date::EndOfMonth(d), kPreceding);
 }
 
-bool Calendar::IsHoliday(const Date& d) const
-{
-    return !IsBusinessDay(d);
-}
 bool Calendar::IsBusinessDay(const Date& d) const
 {
     SF_ASSERT(_impl, "no calendar implementation provided");
 
     const Date& _d = d;
-    if (!_impl->_addedHolidays.empty() &&
-        _impl->_addedHolidays.find(_d) != _impl->_addedHolidays.end())
+    if (!_impl->_addedHolidays.empty() && _impl->_addedHolidays.find(_d) != _impl->_addedHolidays.end())
         return false;
-    if (!_impl->_removedHolidays.empty() &&
-        _impl->_removedHolidays.find(_d) != _impl->_removedHolidays.end())
+    if (!_impl->_removedHolidays.empty() && _impl->_removedHolidays.find(_d) != _impl->_removedHolidays.end())
         return true;
-
     return _impl->IsBusinessDay(_d);
+}
+
+bool Calendar::IsHoliday(const Date& d) const
+{
+    return !IsBusinessDay(d);
+}
+
+bool Calendar::IsEndOfMonth(const Date& d) const {
+    return d >= EndOfMonth(d);
+}
+
+Date Calendar::EndOfMonth(const Date& d) const {
+    return Adjust(Date::EndOfMonth(d), kPreceding);
 }
 
 Date Calendar::Adjust(const Date& d, BusinessDayConvention c) const
@@ -129,6 +135,7 @@ Date Calendar::Adjust(const Date& d, BusinessDayConvention c) const
     if (c == kFollowing || c == kModifiedFollowing || c == kHalfMonthModifiedFollowing) {
         while (IsHoliday(d1))
             ++d1;
+
         if (c == kModifiedFollowing || c == kHalfMonthModifiedFollowing) {
             if (d1.GetMonth() != d.GetMonth()) {
                 return Adjust(d, kPreceding);
@@ -143,10 +150,12 @@ Date Calendar::Adjust(const Date& d, BusinessDayConvention c) const
     else if (c == kPreceding || c == kModifiedPreceding) {
         while (IsHoliday(d1))
             --d1;
+
         if (c == kModifiedPreceding && d1.GetMonth() != d.GetMonth()) {
             return Adjust(d, kFollowing);
         }
-    } else if (c == kNearest) {
+    }
+    else if (c == kNearest) {
         Date d2 = d;
         while (IsHoliday(d1) && IsHoliday(d2)) {
             ++d1;
@@ -162,7 +171,7 @@ Date Calendar::Adjust(const Date& d, BusinessDayConvention c) const
     return d1;
 }
 
-Date Calendar::Advance(const Date& d, Integer n, TimeUnit unit, BusinessDayConvention c, bool endOfMonth) const
+Date Calendar::Advance(const Date& d, Integer n, TimeUnit unit, BusinessDayConvention c, bool endOfMonth) const 
 {
     SF_ASSERT(d != Date(), "null date");
     if (n == 0)
@@ -203,7 +212,7 @@ Date Calendar::Advance(const Date& d, Integer n, TimeUnit unit, BusinessDayConve
             }
             else {
                 // move to the last business day if d is the last business day
-                if (IsEndOfMonth(d)) 
+                if (IsEndOfMonth(d))
                     return Calendar::EndOfMonth(d1);
             }
         }

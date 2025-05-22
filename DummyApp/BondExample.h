@@ -1,7 +1,10 @@
 #pragma once
 #include "../FinanceCore/time/Calendar.h"
 #include "../FinanceCore/time/calendars/TARGET.h"
+#include "../FinanceCore/quote/SimpleQuote.h"
 #include "CorePch.h"
+#include <vector>
+#include <tuple>
 #include <time/TimeUnit.h>
 #include <vector>
 
@@ -75,6 +78,9 @@ void BondExample()
     for (Size i = 0; i < numberOfBonds; i++) {
         quoteHandle[i].linkTo(quote[i]);
     }
+    /*
+
+
 
     // FixedRateBondHelper를 사용해 RateHelper 벡터 생성
     // 이 벡터로 PiecewiseYieldCurve<Discount, LogLinear> 구조의 할인 곡선 생성
