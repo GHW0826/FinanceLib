@@ -29,6 +29,7 @@ SharedPtr<T> MakeShared(Args&&... args) {
 #endif
 
 
+using Natural = SF_INTEGER;
 using Integer = SF_INTEGER;
 using Real = SF_REAL;
 using Size = std::size_t;

@@ -1,7 +1,9 @@
 #pragma once
 #include <cstdint>
 
+#include "Period.h"
 #include "Weekday.h"
+#include "TimeUnit.h"
 
 enum Month {
     kJanuary = 1,
@@ -40,11 +42,30 @@ public:
     Date(Day d, Month m, Year y);
     explicit Date(Date::serial_type serialNumber);
 public:
+    Date& operator+=(Date::serial_type days);
+    Date& operator+=(const Period&);
+    Date& operator-=(Date::serial_type days);
+    Date& operator-=(const Period&);
+    Date& operator++();
+    Date operator++(int);
+    Date& operator--();
+    Date operator--(int);
+    Date operator+(Date::serial_type days) const;
+    Date operator+(const Period&) const;
+    Date operator-(Date::serial_type days) const;
+    Date operator-(const Period&) const;
+public:
+    Date Advance(const Date& date, Integer n, TimeUnit units) const;
     static bool IsLeap(Year y);
     // 현재 관리하는 최소 날짜 반환 (1901/01/01)
     static Date MinDate();
     // 현재 관리하는 최대 날짜 반환 (2199/12/31)
     static Date MaxDate();
+    static Date StartOfMonth(const Date& d);
+    static bool IsStartOfMonth(const Date& d);
+    static Date EndOfMonth(const Date& d);
+    static bool IsEndOfMonth(const Date& d);
+    static Date NextWeekday(const Date& d, Weekday w);
 private:
     static void CheckSerialNumber(Date::serial_type serialNumber);
     static Date::serial_type MinimumSerialNumber();
@@ -54,7 +75,7 @@ private:
     static Integer MonthOffset(Month m, bool leapYear);
     static Date::serial_type YearOffset(Year y);
 public:
-    Weekday Weekday() const;
+    Weekday GetWeekday() const;
     Day DayOfMonth() const;
     // One-based (Jan 1st = 1)
     Day DayOfYear() const;

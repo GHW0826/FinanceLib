@@ -10,6 +10,9 @@
     <Filter Include="Time\Calendars">
       <UniqueIdentifier>{89c33e0b-78d8-45b2-a4b5-0b5fc82de310}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Instrument">
+      <UniqueIdentifier>{1f2eb654-9af9-44e7-bd4a-6b504b36a691}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -48,6 +51,20 @@
     <ClInclude Include="time\Period.h">
       <Filter>Time</Filter>
     </ClInclude>
+    <ClInclude Include="Instrument\Bond.h">
+      <Filter>Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrument\Instrument.h">
+      <Filter>Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreGlobal.h" />
+    <ClInclude Include="Memory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FinanceCore.cpp">
@@ -80,5 +97,16 @@
     <ClCompile Include="time\Period.cpp">
       <Filter>Time</Filter>
     </ClCompile>
+    <ClCompile Include="Instrument\Bond.cpp">
+      <Filter>Instrument</Filter>
+    </ClCompile>
+    <ClCompile Include="Instrument\Instrument.cpp">
+      <Filter>Instrument</Filter>
+    </ClCompile>
+    <ClCompile Include="Allocator.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreGlobal.cpp" />
+    <ClCompile Include="Memory.cpp" />
   </ItemGroup>
 </Project>

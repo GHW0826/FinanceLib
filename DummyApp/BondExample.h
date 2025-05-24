@@ -3,6 +3,7 @@
 #include "../FinanceCore/time/calendars/TARGET.h"
 #include "CorePch.h"
 #include <time/TimeUnit.h>
+#include <vector>
 
 void BondExample()
 {
@@ -19,8 +20,8 @@ void BondExample()
     Date todaysDate = calendar.Advance(settlementDate, -settlementDays, TimeUnit::kDays);
     // Settings::instance().evaluationDate() = todaysDate;
 
-    std::cout << "Today: " << todaysDate.Weekday() << ", " << todaysDate << std::endl;
-    std::cout << "Settlement date: " << settlementDate.Weekday() << ", " << settlementDate << std::endl;
+    std::cout << "Today: " << todaysDate.GetWeekday() << ", " << todaysDate << std::endl;
+    std::cout << "Settlement date: " << settlementDate.GetWeekday() << ", " << settlementDate << std::endl;
     /////////////////// 1. 환경 설정 및 평가일 지정
 
 
@@ -64,11 +65,11 @@ void BondExample()
         102.140625
     };
 
-    /*
-    std::vector<ext::shared_ptr<SimpleQuote>> quote;
+    std::vector<std::shared_ptr<SimpleQuote>> quote;
     for (Real marketQuote : marketQuotes) {
-        quote.push_back(ext::make_shared<SimpleQuote>(marketQuote));
+        quote.push_back(MakeShared<SimpleQuote>(marketQuote));
     }
+    /*
 
     RelinkableHandle<Quote> quoteHandle[numberOfBonds];
     for (Size i = 0; i < numberOfBonds; i++) {

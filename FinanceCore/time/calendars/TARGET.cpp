@@ -9,7 +9,7 @@ TARGET::TARGET()
 
 bool TARGET::Impl::IsBusinessDay(const Date& date) const
 {
-    Weekday w = date.Weekday();
+    Weekday w = date.GetWeekday();
     Day d = date.DayOfMonth();
     Day dd = date.DayOfYear();
     Month m = date.GetMonth();

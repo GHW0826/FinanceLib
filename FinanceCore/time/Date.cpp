@@ -25,16 +25,157 @@ Date::Date(Date::serial_type serialNumber)
     CheckSerialNumber(serialNumber);
 }
 
+Date& Date::operator+=(Date::serial_type days)
+{
+    Date::serial_type serial = _serialNumber + days;
+    CheckSerialNumber(serial);
+    _serialNumber = serial;
+    return *this;
+}
+
+Date& Date::operator+=(const Period& period)
+{
+    _serialNumber = Advance(*this, period.GetLength(), period.GetUnits()).SerialNumber();
+    return *this;
+}
+
+Date& Date::operator-=(Date::serial_type days)
+{
+    Date::serial_type serial = _serialNumber - days;
+    CheckSerialNumber(serial);
+    _serialNumber = serial;
+    return *this;
+}
+
+Date& Date::operator-=(const Period& period)
+{
+    _serialNumber = Advance(*this, -period.GetLength(), period.GetUnits()).SerialNumber();
+    return *this;
+}
+
+Date& Date::operator++()
+{
+    Date::serial_type serial = _serialNumber + 1;
+    CheckSerialNumber(serial);
+    _serialNumber = serial;
+    return *this;
+}
+
+Date Date::operator++(int)
+{
+    Date old(*this);
+    ++*this;
+    return old;
+}
+
+Date& Date::operator--()
+{
+    Date::serial_type serial = _serialNumber - 1;
+    CheckSerialNumber(serial);
+    _serialNumber = serial;
+    return *this;
+}
+
+Date Date::operator--(int)
+{
+    Date old(*this);
+    --*this;
+    return old;
+}
+
+Date Date::operator+(Date::serial_type days) const
+{
+    return Date(_serialNumber + days);
+}
+
+Date Date::operator+(const Period& period) const
+{
+    return Advance(*this, period.GetLength(), period.GetUnits());
+}
+
+Date Date::operator-(Date::serial_type days) const
+{
+    return Date(_serialNumber - days);
+}
+
+Date Date::operator-(const Period& period) const
+{
+    return Advance(*this, -period.GetLength(), period.GetUnits());
+}
+
+Day Date::DayOfYear() const
+{
+    return Day();
+}
+
 Month Date::GetMonth() const
 {
-    return Month();
+    Day d = DayOfYear(); // dayOfYear is 1 based
+    Integer m = d / 30 + 1;
+    bool leap = IsLeap(GetYear());
+    while (d <= MonthOffset(Month(m), leap))
+        --m;
+    while (d > MonthOffset(Month(m + 1), leap)) // NOLINT(misc-misplaced-widening-cast)
+        ++m;
+    return Month(m);
 }
 
 Year Date::GetYear() const
 {
-    return Year();
+    Year y = (_serialNumber / 365) + 1900;
+    // yearOffset(y) is December 31st of the preceding year
+    if (_serialNumber <= YearOffset(y))
+        --y;
+    return y;
 }
 
+Date::serial_type Date::SerialNumber() const
+{
+    return Date::serial_type();
+}
+
+Date Date::Advance(const Date& date, Integer n, TimeUnit units)  const
+{
+    switch (units) {
+    case kDays:
+        return date + n;
+    case kWeeks:
+        return date + 7 * n;
+    case kMonths: {
+        Day d = date.DayOfMonth();
+        Integer m = Integer(date.GetMonth()) + n;
+        Year y = date.GetYear();
+        while (m > 12) {
+            m -= 12;
+            y += 1;
+        }
+        while (m < 1) {
+            m += 12;
+            y -= 1;
+        }
+
+        SF_ASSERT(y >= 1900 && y <= 2199, "year " << y << " out of bounds. " << "It must be in [1901,2199]");
+
+        Integer length = MonthLength(Month(m), IsLeap(y));
+        if (d > length)
+            d = length;
+        return { d, Month(m), y };
+    }
+    case kYears: {
+        Day d = date.DayOfMonth();
+        Month m = date.GetMonth();
+        Year y = date.GetYear() + n;
+
+        SF_ASSERT(y >= 1900 && y <= 2199, "year " << y << " out of bounds. " << "It must be in [1901,2199]");
+        if (d == 29 && m == kFebruary && !IsLeap(y))
+            d = 28;
+        return { d, m, y };
+    }
+    default:
+        SF_FAIL("undefined time units");
+    }
+
+}
 bool Date::IsLeap(Year y)
 {
     static const bool YearIsLeap[] = {
@@ -113,6 +254,31 @@ Date Date::MinDate() {
 Date Date::MaxDate() {
     static const Date maximumDate(MaximumSerialNumber());
     return maximumDate;
+}
+
+Date Date::StartOfMonth(const Date& d)
+{
+    return Date();
+}
+
+bool Date::IsStartOfMonth(const Date& d)
+{
+    return false;
+}
+
+Date Date::EndOfMonth(const Date& d)
+{
+    return Date();
+}
+
+bool Date::IsEndOfMonth(const Date& d)
+{
+    return false;
+}
+
+Date Date::NextWeekday(const Date& d, Weekday w)
+{
+    return Date();
 }
 
 void Date::CheckSerialNumber(Date::serial_type serialNumber) {
@@ -226,6 +392,16 @@ Date::serial_type Date::YearOffset(Year y)
         109574
     };
     return YearOffset[y - 1900];
+}
+
+Weekday Date::GetWeekday() const
+{
+    return Weekday();
+}
+
+Day Date::DayOfMonth() const
+{
+    return Day();
 }
 
 #pragma region OP
