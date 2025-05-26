@@ -1,129 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Main">
-      <UniqueIdentifier>{0e1fd6f3-739d-4b53-8646-3ab64ea4dd92}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Time">
-      <UniqueIdentifier>{2946def3-9651-4026-87bf-46ad26840525}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Time\Calendars">
-      <UniqueIdentifier>{89c33e0b-78d8-45b2-a4b5-0b5fc82de310}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Instrument">
-      <UniqueIdentifier>{1f2eb654-9af9-44e7-bd4a-6b504b36a691}</UniqueIdentifier>
-    <Filter Include="Quote">
-      <UniqueIdentifier>{dcbe8a25-9184-4ea9-bc77-c888e0b53600}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Pattern">
-      <UniqueIdentifier>{551e1761-6656-4e5e-9865-0270f455734f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{a2e0542c-82e0-4ce3-ae31-359d2d1b9c76}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Types.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="time\Date.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="CorePch.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="time\Weekday.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreMacro.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Error.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="time\Calendar.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="time\calendars\TARGET.h">
-      <Filter>Time\Calendars</Filter>
-    </ClInclude>
-    <ClInclude Include="time\TimeUnit.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="time\BusinessDayConvention.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="time\Period.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-    <ClInclude Include="Instrument\Bond.h">
-      <Filter>Instrument</Filter>
-    </ClInclude>
-    <ClInclude Include="Instrument\Instrument.h">
-      <Filter>Instrument</Filter>
-    </ClInclude>
-    <ClInclude Include="Containers.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Allocator.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CoreGlobal.h" />
-    <ClInclude Include="Memory.h" />
-    <ClInclude Include="quote\SimpleQuote.h">
-      <Filter>Quote</Filter>
-    </ClInclude>
-    <ClInclude Include="pattern\Observable.h">
-      <Filter>Pattern</Filter>
-    </ClInclude>
-    <ClInclude Include="quote\Quote.h">
-      <Filter>Quote</Filter>
-    </ClInclude>
-    <ClInclude Include="utility\Null.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="pattern\Singleton.h">
-      <Filter>Pattern</Filter>
-    </ClInclude>
-    <ClInclude Include="handle.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="time\Frequency.h">
-      <Filter>Time</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FinanceCore.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="time\Date.cpp">
-      <Filter>Time</Filter>
-    </ClCompile>
-    <ClCompile Include="time\Weekday.cpp">
-      <Filter>Time</Filter>
-    </ClCompile>
-    <ClCompile Include="Error.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="time\Calendar.cpp">
-      <Filter>Time</Filter>
-    </ClCompile>
-    <ClCompile Include="time\calendars\TARGET.cpp">
-      <Filter>Time\Calendars</Filter>
-    </ClCompile>
-    <ClCompile Include="time\TimeUnit.cpp">
       <Filter>Time</Filter>
     </ClCompile>
     <ClCompile Include="time\BusinessDayConvention.cpp">
       <Filter>Time</Filter>
     </ClCompile>
+    <ClCompile Include="Allocator.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreGlobal.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="FinanceCore.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Frequency.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Date.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
     <ClCompile Include="time\Period.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\TimeUnit.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="time\Weekday.cpp">
       <Filter>Time</Filter>
     </ClCompile>
     <ClCompile Include="Instrument\Bond.cpp">
@@ -132,29 +40,138 @@
     <ClCompile Include="Instrument\Instrument.cpp">
       <Filter>Instrument</Filter>
     </ClCompile>
-    <ClCompile Include="Allocator.cpp">
+    <ClCompile Include="Memory.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="CoreGlobal.cpp" />
-    <ClCompile Include="Memory.cpp" />
-    <ClCompile Include="quote\SimpleQuote.cpp">
-      <Filter>Quote</Filter>
+    <ClCompile Include="pch.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="pattern\Observable.cpp">
-      <Filter>Pattern</Filter>
+    <ClCompile Include="utility\Null.cpp">
+      <Filter>Util</Filter>
     </ClCompile>
     <ClCompile Include="quote\Quote.cpp">
       <Filter>Quote</Filter>
     </ClCompile>
-    <ClCompile Include="utility\Null.cpp">
-      <Filter>Utility</Filter>
+    <ClCompile Include="quote\SimpleQuote.cpp">
+      <Filter>Quote</Filter>
+    </ClCompile>
+    <ClCompile Include="time\calendars\TARGET.cpp">
+      <Filter>Time\Calendars</Filter>
+    </ClCompile>
+    <ClCompile Include="termstructures\BootstrapHelper.cpp">
+      <Filter>TermStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="pattern\Observable.cpp">
+      <Filter>Pattern</Filter>
     </ClCompile>
     <ClCompile Include="pattern\Singleton.cpp">
       <Filter>Pattern</Filter>
     </ClCompile>
-    <ClCompile Include="time\Frequency.cpp">
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="time\Calendar.h">
       <Filter>Time</Filter>
-    </ClCompile>
->>>>>>> 08ac318 (bond example process2)
+    </ClInclude>
+    <ClInclude Include="time\BusinessDayConvention.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Allocator.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Containers.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreGlobal.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreMacro.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CorePch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Error.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Frequency.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Date.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Period.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\TimeUnit.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="time\Weekday.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrument\Bond.h">
+      <Filter>Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrument\Instrument.h">
+      <Filter>Instrument</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\Null.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="quote\SimpleQuote.h">
+      <Filter>Quote</Filter>
+    </ClInclude>
+    <ClInclude Include="quote\Quote.h">
+      <Filter>Quote</Filter>
+    </ClInclude>
+    <ClInclude Include="time\calendars\TARGET.h">
+      <Filter>Time\Calendars</Filter>
+    </ClInclude>
+    <ClInclude Include="termstructures\BootstrapHelper.h">
+      <Filter>TermStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\Singleton.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="pattern\Observable.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{87680ade-664b-4ef9-ba15-da8fd74b7bc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{b43963b6-d751-4f0d-9b3e-8d06963e8b04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Instrument">
+      <UniqueIdentifier>{d418c19d-be63-4a00-b8f6-e8d6e5b30f84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{0953876b-35af-42ee-8bfe-ae9d5e417ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quote">
+      <UniqueIdentifier>{8ed3df92-c506-4643-b786-9f0d1b96fb90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time\Calendars">
+      <UniqueIdentifier>{de10f5c7-5441-4afa-9996-59c66f849442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TermStructures">
+      <UniqueIdentifier>{6981c9f9-f797-4dfc-9253-e22a32f4c9b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{e13240fb-2193-4e9d-ae21-b556042379d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

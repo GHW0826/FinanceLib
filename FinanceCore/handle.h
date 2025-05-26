@@ -7,6 +7,8 @@
 	그런 경우 포인터가 다른 관측값에 다시 연결되면 복사된다.
 	T는 Observable에서 상속되어야 함
  */
-class Handle {
+template <class T>
+class Handle 
+{
 
 };

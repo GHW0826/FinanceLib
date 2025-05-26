@@ -95,11 +95,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(SolutionDir)\FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-=======
-      <AdditionalIncludeDirectories>$(SolutionDir)FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 08ac318 (bond example process2)
     </ClCompile>
     <Link>
       <SubSystem>
@@ -156,11 +152,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(SolutionDir)\FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-=======
-      <AdditionalIncludeDirectories>$(SolutionDir)FinanceCore\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> 08ac318 (bond example process2)
     </ClCompile>
     <Link>
       <SubSystem>
@@ -186,6 +178,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="quote\Quote.h" />
     <ClInclude Include="quote\SimpleQuote.h" />
+    <ClInclude Include="termstructures\BootstrapHelper.h" />
     <ClInclude Include="time\BusinessDayConvention.h" />
     <ClInclude Include="time\Calendar.h" />
     <ClInclude Include="time\calendars\TARGET.h" />
@@ -215,6 +208,7 @@
     </ClCompile>
     <ClCompile Include="quote\Quote.cpp" />
     <ClCompile Include="quote\SimpleQuote.cpp" />
+    <ClCompile Include="termstructures\BootstrapHelper.cpp" />
     <ClCompile Include="time\BusinessDayConvention.cpp" />
     <ClCompile Include="time\Calendar.cpp" />
     <ClCompile Include="time\calendars\TARGET.cpp" />
