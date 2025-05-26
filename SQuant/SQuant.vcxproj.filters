@@ -4,6 +4,12 @@
     <Filter Include="Main">
       <UniqueIdentifier>{89c635a4-b2c1-4319-8134-7a64894f42ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Indicator">
+      <UniqueIdentifier>{51a45f38-9f70-4d05-a546-14e73edbf7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PerformanceMetric">
+      <UniqueIdentifier>{092cb478-f53f-479c-b0d2-ba772cb90b46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SQuant.cpp">
@@ -12,9 +18,51 @@
     <ClCompile Include="pch.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="indicator\BollingerBand.cpp">
+      <Filter>Indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="performancemetric\MaximumDrawdown.cpp">
+      <Filter>PerformanceMetric</Filter>
+    </ClCompile>
+    <ClCompile Include="performancemetric\PercentChange.cpp">
+      <Filter>PerformanceMetric</Filter>
+    </ClCompile>
+    <ClCompile Include="indicator\IntradayIntensity.cpp">
+      <Filter>Indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="indicator\MoneyFlowIndex.cpp">
+      <Filter>Indicator</Filter>
+    </ClCompile>
+    <ClCompile Include="Trader.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="indicator\BollingerBand.h">
+      <Filter>Indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="performancemetric\MaximumDrawdown.h">
+      <Filter>PerformanceMetric</Filter>
+    </ClInclude>
+    <ClInclude Include="performancemetric\PercentChange.h">
+      <Filter>PerformanceMetric</Filter>
+    </ClInclude>
+    <ClInclude Include="indicator\IntradayIntensity.h">
+      <Filter>Indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="indicator\MoneyFlowIndex.h">
+      <Filter>Indicator</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStruct.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CorePch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Trader.h">
       <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
