@@ -179,6 +179,7 @@
     <ClInclude Include="quote\Quote.h" />
     <ClInclude Include="quote\SimpleQuote.h" />
     <ClInclude Include="termstructures\BootstrapHelper.h" />
+    <ClInclude Include="termstructures\yield\RateHelper.h" />
     <ClInclude Include="time\BusinessDayConvention.h" />
     <ClInclude Include="time\Calendar.h" />
     <ClInclude Include="time\calendars\TARGET.h" />
@@ -209,6 +210,7 @@
     <ClCompile Include="quote\Quote.cpp" />
     <ClCompile Include="quote\SimpleQuote.cpp" />
     <ClCompile Include="termstructures\BootstrapHelper.cpp" />
+    <ClCompile Include="termstructures\yield\RateHelper.cpp" />
     <ClCompile Include="time\BusinessDayConvention.cpp" />
     <ClCompile Include="time\Calendar.cpp" />
     <ClCompile Include="time\calendars\TARGET.cpp" />

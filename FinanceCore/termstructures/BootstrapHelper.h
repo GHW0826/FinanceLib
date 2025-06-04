@@ -15,8 +15,6 @@
     나중에 같은 상품을 개별적으로 가격 계산할 때 사용하는 알고리즘 간의 일관성을 유지할 수 있다.
     다만 현재 제공되는 BootstrapHelper 클래스들에서는 이 원칙이 완전히 강제되지는 않고 있다.
 */
-
-
 template <class TS>
 class BootstrapHelper : public Observer, public Observable
 {
@@ -29,4 +27,30 @@ protected:
     Date _maturityDate;
     Date _latestRelevantDate;
     Date _pillarDate;
+};
+
+//! Bootstrap helper with date schedule relative to global evaluation date
+/*! Derived classes must takes care of rebuilding the date schedule when
+    the global evaluation date changes
+*/
+template <class TS>
+class RelativeDateBootstrapHelper : public BootstrapHelper<TS> {
+public:
+    explicit RelativeDateBootstrapHelper(const std::variant<Spread, Handle<Quote>>& quote, bool updateDates = true);
+
+    //! \name Observer interface
+    //@{
+    void update() override 
+    {
+        if (_updateDates && _evaluationDate != Settings::instance().evaluationDate()) {
+            _evaluationDate = Settings::instance().evaluationDate();
+            initializeDates();
+        }
+        BootstrapHelper<TS>::update();
+    }
+    //@}
+protected:
+    virtual void initializeDates() = 0;
+    Date _evaluationDate;
+    bool _updateDates;
 };

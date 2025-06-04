@@ -2,11 +2,13 @@
 #include "../FinanceCore/time/Calendar.h"
 #include "../FinanceCore/time/calendars/TARGET.h"
 #include "../FinanceCore/quote/SimpleQuote.h"
+#include "../FinanceCore/time/TimeUnit.h"
 #include "CorePch.h"
 #include <vector>
 #include <tuple>
-#include <time/TimeUnit.h>
 #include <vector>
+#include <handle.h>
+#include <Schedule.h>
 
 void BondExample()
 {
@@ -72,28 +74,22 @@ void BondExample()
     for (Real marketQuote : marketQuotes) {
         quote.push_back(MakeShared<SimpleQuote>(marketQuote));
     }
-    /*
 
     RelinkableHandle<Quote> quoteHandle[numberOfBonds];
     for (Size i = 0; i < numberOfBonds; i++) {
-        quoteHandle[i].linkTo(quote[i]);
+        quoteHandle[i].LinkTo(quote[i]);
     }
-    /*
-
 
 
     // FixedRateBondHelper를 사용해 RateHelper 벡터 생성
     // 이 벡터로 PiecewiseYieldCurve<Discount, LogLinear> 구조의 할인 곡선 생성
     // auto bondDiscountingTermStructure = ext::make_shared<PiecewiseYieldCurve<Discount,LogLinear>>(todaysDate, bondHelpers, termStructureDayCounter);
-
-    std::vector<ext::shared_ptr<RateHelper>> bondHelpers;
-
+    Vector<SharedPtr<RateHelper>> bondHelpers;
     for (Size i = 0; i < numberOfBonds; i++) {
 
-        Schedule schedule(issueDates[i], maturities[i], Period(Semiannual), calendar,
-            Unadjusted, Unadjusted, DateGeneration::Backward, false);
+        Schedule schedule(issueDates[i], maturities[i], Period(Semiannual), calendar, Unadjusted, Unadjusted, DateGeneration::Backward, false);
 
-        auto bondHelper = ext::make_shared<FixedRateBondHelper>(
+        auto bondHelper = MakeShared<FixedRateBondHelper>(
             quoteHandle[i],
             settlementDays,
             100.0,
@@ -114,6 +110,7 @@ void BondExample()
 
         bondHelpers.push_back(bondHelper);
     }
+    /*
 
     // The term structure uses its day counter internally to
     // convert between dates and times; it's not required to equal

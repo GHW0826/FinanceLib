@@ -67,6 +67,9 @@
     <ClCompile Include="pattern\Singleton.cpp">
       <Filter>Pattern</Filter>
     </ClCompile>
+    <ClCompile Include="termstructures\yield\RateHelper.cpp">
+      <Filter>TermStructures\Yield</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="time\Calendar.h">
@@ -147,6 +150,9 @@
     <ClInclude Include="pattern\Observable.h">
       <Filter>Pattern</Filter>
     </ClInclude>
+    <ClInclude Include="termstructures\yield\RateHelper.h">
+      <Filter>TermStructures\Yield</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Main">
@@ -172,6 +178,9 @@
     </Filter>
     <Filter Include="Pattern">
       <UniqueIdentifier>{e13240fb-2193-4e9d-ae21-b556042379d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TermStructures\Yield">
+      <UniqueIdentifier>{dc4e55d3-af0b-4a80-994c-16098c3b6440}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
